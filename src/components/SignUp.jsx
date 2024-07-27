@@ -2,6 +2,7 @@ import "@picocss/pico";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { supabase } from "./auth/supabaseClient";
 
 const SignUp = () => {
   const schema = yup.object().shape({
@@ -21,10 +22,12 @@ const SignUp = () => {
 
   const onSubmit = async (data) => {
     console.log(data);
-    // const { data, error } = await supabase.auth.signUp({
-    //   email: "example@email.com",
-    //   password: "example-password",
-    // });
+    const { data: response, error } = await supabase.auth.signUp({
+      email: data.email,
+      name: data.name,
+      password: "example-password", // FIX THIS!
+    });
+    console.log(response, error);
   };
   return (
     <>
