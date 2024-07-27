@@ -6,7 +6,10 @@ import Homepage from "./components/Homepage";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 import Dashboard from "./components/Dashboard";
-import DatesList from "./components/DatesList";
+import Display from "./components/Display.jsx";
+import DatesList from "./components/DatesList"
+
+
 
 import { supabase } from "./components/auth/supabaseClient.js";
 
@@ -31,7 +34,9 @@ function App() {
         <Route path="/login" element={<Login session={session} />} />
         <Route path="/signup" element={<SignUp session={session} />} />
         <Route path="/dashboard" element={<Dashboard session={session} />} />
+        <Route path="/display" element={<Display session={session} />} />
         <Route path="/dates-list" element={<DatesList session={session} />} />
+
       </Routes>
     </>
   );
