@@ -2,7 +2,6 @@ import "@picocss/pico";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { supabase } from "./auth/supabaseClient";
 
 const Login = () => {
   const schema = yup.object().shape({
@@ -10,21 +9,15 @@ const Login = () => {
   });
 
   const {
+    register,
     handleSubmit,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = async (data) => {
+  const onSubmit = (data) => {
     console.log(data);
-    const { data: response, error } = await supabase.auth.signInWithOtp({
-      email: data.email,
-      // options: {
-      //   emailRedirectTo: "https://example.com/welcome",
-      // },
-    });
-    console.log(data, response);
   };
 
   return (
@@ -37,9 +30,10 @@ const Login = () => {
           placeholder="Email"
           aria-label="Email"
           autoComplete="email"
+          {...register("email")}
         ></input>
         <p>{errors.email?.message}</p>
-        <input type="submit" value="Login" />
+        <input type="submit" value="Login"/>
       </form>
     </>
   );
