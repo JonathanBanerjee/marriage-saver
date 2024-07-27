@@ -1,21 +1,8 @@
 import "@picocss/pico";
 import CountDown from "./CountDown";
+import { useState, useEffect } from "react";
 
 const DatesList = ({ dates: listOfDates }) => {
-  // const listOfDates = [
-  //     {
-  //         name: "Sarah",
-  //         date: "16-04-1798",
-  //         event: "birthday",
-  //         description: "anniversary of marriage"
-  //     },{
-  //         name: "Jamie",
-  //         date: "16-04-2001",
-  //         event: "wedding",
-  //         description: "wedding with Lana"
-  //     }
-  // ]
-
   return (
     <>
       <h1>Dates List</h1>

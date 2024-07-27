@@ -1,5 +1,5 @@
 import React, { Component, useEffect, useState } from "react";
-
+import { Link } from "react-router-dom";
 import { supabase } from "./auth/supabaseClient";
 
 import DatesList from "./DatesList";
@@ -19,13 +19,11 @@ function Dashboard({ session }) {
     <>
       Dashboard
       <DatesList dates={dates}></DatesList>
-
       <div>
         <Link to="/NewEvent">
-          <button
-            type="submit"
-            value="toNewEvent"
-          >Add another event</button>
+          <button type="submit" value="toNewEvent">
+            Add another event
+          </button>
         </Link>
       </div>
     </>
