@@ -2,7 +2,20 @@ import "@picocss/pico";
 import CountDown from "./CountDown";
 import { useState, useEffect } from "react";
 
-const DatesList = ({ dates: listOfDates }) => {
+const DatesList = ({ dates }) => {
+  const [listOfDates, setListOfDates] = useState([]);
+  useEffect(() => {
+    console.log("Testing dates list");
+    dates = dates.sort((a, b) => {
+      if (a.date > b.date) {
+        return -1;
+      } else {
+        return 1;
+      }
+    });
+    setListOfDates(dates);
+  });
+
   return (
     <>
       <h1>Dates List</h1>
