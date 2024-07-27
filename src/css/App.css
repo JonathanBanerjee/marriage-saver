@@ -3,6 +3,7 @@ max-width: 1280px;
 margin: 0 auto;
 padding: 2rem;
 text-align: center;
+background-color: ;
   }
   
   .row {
@@ -59,4 +60,6 @@ border: 2px solid rgba(112, 76, 182, 0.4);
   .button:active {
 background-color: rgba(112, 76, 182, 0.2);
   }
+
+  
   
