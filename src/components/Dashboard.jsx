@@ -19,6 +19,15 @@ function Dashboard({ session }) {
     <>
       Dashboard
       <DatesList dates={dates}></DatesList>
+
+      <div>
+        <Link to="/NewEvent">
+          <button
+            type="submit"
+            value="toNewEvent"
+          >Add another event</button>
+        </Link>
+      </div>
     </>
   );
 }
