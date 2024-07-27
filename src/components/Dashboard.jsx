@@ -19,6 +19,7 @@ function Dashboard({ session }) {
   const getData = async () => {
     let { data: dates, error } = await supabase.from("dates").select("*");
     console.log(dates);
+    console.log(session);
   };
   useEffect(() => {
     console.log("this ran");
