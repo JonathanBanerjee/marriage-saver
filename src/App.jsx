@@ -13,7 +13,7 @@ import Homepage from "./components/Homepage";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 import Dashboard from "./components/Dashboard";
-
+import Display from "./components/Display.jsx";
 import { supabase } from "./components/auth/supabaseClient.js";
 
 function App() {
@@ -36,6 +36,7 @@ function App() {
         <Route path="/login" element={<Login session={session} />} />
         <Route path="/signup" element={<SignUp session={session} />} />
         <Route path="/dashboard" element={<Dashboard session={session} />} />
+        <Route path="/display" element={<Display session={session} />} />
       </Routes>
     </>
   );
