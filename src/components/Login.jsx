@@ -9,6 +9,7 @@ const Login = () => {
   });
 
   const {
+    register,
     handleSubmit,
     formState: { errors },
   } = useForm({
@@ -29,9 +30,10 @@ const Login = () => {
           placeholder="Email"
           aria-label="Email"
           autoComplete="email"
+          {...register("email")}
         ></input>
         <p>{errors.email?.message}</p>
-        <input type="submit" value="Login" />
+        <input type="submit" value="Login"/>
       </form>
     </>
   );
