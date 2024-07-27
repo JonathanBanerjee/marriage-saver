@@ -31,10 +31,10 @@ const DatesList = ({ dates: listOfDates }) => {
           {listOfDates.map((date) => {
             return (
               <tr>
-                <td>{date.name}</td>
+                <td>{date.event_person}</td>
                 <td>{date.date}</td>
-                <td>{date.event}</td>
-                <td>{date.description}</td>
+                <td>{date.event_label}</td>
+                <td>{date.event_desc}</td>
               </tr>
             );
           })}
