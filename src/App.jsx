@@ -28,7 +28,7 @@ function App() {
 
   return (
     <>
-      <Navbar />
+      <Navbar session={session} />
       <Routes>
         <Route path="/" element={<Homepage session={session} />} />
         <Route path="/login" element={<Login session={session} />} />
