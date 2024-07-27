@@ -4,7 +4,6 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
 import Homepage from './components/Homepage.jsx'
 import Login from './components/Login.jsx'
 import SignUp from './components/SignUp.jsx'
