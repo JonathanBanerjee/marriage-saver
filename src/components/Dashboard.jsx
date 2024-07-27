@@ -2,6 +2,8 @@ import React, { Component, useEffect } from "react";
 
 import { supabase } from "./auth/supabaseClient";
 
+import DatesList from "./DatesList";
+
 const sampleData = [
   {
     created_at: "2024-07-27T08:39:48.380147+00:00",
@@ -26,7 +28,11 @@ function Dashboard({ session }) {
     getData();
   }, []);
 
-  return <>This is the dashboard</>;
+  return (
+    <>
+      Dashboard<DatesList></DatesList>
+    </>
+  );
 }
 
 export default Dashboard;
