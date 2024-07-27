@@ -10,30 +10,17 @@ import SignUp from './components/SignUp.jsx'
 import Dashboard from './components/Dashboard.jsx'
 import './css/index.css'
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Homepage />
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-  },
-  {
-    path: "/login",
-    element: <Login />
-  },
+import ReactDOM from "react-dom/client";
+import App from "./App.jsx";
 
-  {
-    path: "/signup",
-    element: <SignUp />
-  },
-
-  {
-    path: "/dashboard",
-    element: <Dashboard />
-  }
-]);
+import "./css/index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>
 );
