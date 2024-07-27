@@ -1,4 +1,5 @@
 import "@picocss/pico";
+import { Link } from 'react-router-dom';
 
 const Homepage = () => {
 
@@ -9,19 +10,21 @@ const Homepage = () => {
       <h1>Homepage</h1>
 
       <div>
-        <button
-          type="submit"
-          value="signUp"
-
-        >Sign Up</button>
+        <Link to="/SignUp">
+          <button
+            type="submit"
+            value="signUp"
+          >Sign Up</button>
+        </Link>
       </div>
 
       <div>
-        <button
-          type="submit"
-          value="login"
-
-        >Login</button>
+        <Link to="/Login">
+          <button
+            type="submit"
+            value="login"
+          >Login</button>
+        </Link>
       </div>
 
     </>
