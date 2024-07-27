@@ -1,9 +1,28 @@
 import "@picocss/pico";
+import { useForm } from "react-hook-form";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+
 const Login = () => {
+  const schema = yup.object().shape({
+    email: yup.string().email().required(),
+  });
+
+  const {
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+
+  const onSubmit = (data) => {
+    console.log(data);
+  };
+
   return (
     <>
       <h2>Login</h2>
-      <form>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <input
           type="email"
           name="email"
@@ -11,13 +30,7 @@ const Login = () => {
           aria-label="Email"
           autoComplete="email"
         ></input>
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          aria-label="Password"
-          autoComplete="current-password"
-        ></input>
+        <p>{errors.email?.message}</p>
         <input type="submit" value="Login" />
       </form>
     </>
