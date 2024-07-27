@@ -12,6 +12,7 @@ import DatesList from "./components/DatesList"
 
 
 import { supabase } from "./components/auth/supabaseClient.js";
+import Navbar from "./components/Navbar.jsx";
 
 function App() {
   const [session, setSession] = useState(null);
@@ -29,6 +30,7 @@ function App() {
 
   return (
     <>
+    <Navbar />
       <Routes>
         <Route path="/" element={<Homepage session={session} />} />
         <Route path="/login" element={<Login session={session} />} />
