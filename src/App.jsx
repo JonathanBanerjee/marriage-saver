@@ -30,7 +30,15 @@ function App() {
     <>
       <Navbar session={session} />
       <Routes>
+        {/* <Route exact path="/">
+          {session ? (
+            <Redirect to="/dashboard" />
+          ) : (
+            <Homepage session={session} />
+          )}
+        </Route> */}
         <Route path="/" element={<Homepage session={session} />} />
+
         <Route path="/login" element={<Login session={session} />} />
         <Route path="/signup" element={<SignUp session={session} />} />
         <Route path="/dashboard" element={<Dashboard session={session} />} />

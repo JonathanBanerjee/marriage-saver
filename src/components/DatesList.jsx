@@ -1,4 +1,5 @@
 import "@picocss/pico";
+import CountDown from "./CountDown";
 
 const DatesList = ({ dates: listOfDates }) => {
   // const listOfDates = [
@@ -25,6 +26,7 @@ const DatesList = ({ dates: listOfDates }) => {
             <th scope="col">Date</th>
             <th scope="col">Event</th>
             <th scope="col">Description</th>
+            <th scope="col">Time Until</th>
           </tr>
         </thead>
         <tbody>
@@ -35,6 +37,9 @@ const DatesList = ({ dates: listOfDates }) => {
                 <td>{date.date}</td>
                 <td>{date.event_label}</td>
                 <td>{date.event_desc}</td>
+                <td>
+                  <CountDown target={date.date} />
+                </td>
               </tr>
             );
           })}
